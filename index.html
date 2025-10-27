@@ -36,7 +36,7 @@ We are borrowing this template for use with the capstone program
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		  <ul class="nav navbar-nav">
 				  <li><a href="index.html">HOME</a></li>
-				  <li><a href="#projects">PROJECTS</a></li> 
+				  <li><a href="#research">RESEARCH EXPERIENCE</a></li> 
 				  <li><a href="Resume.pdf">RESUME</a></li> 
 		  </ul>
 		</div>
@@ -64,7 +64,7 @@ We are borrowing this template for use with the capstone program
 					<p>The goal is to give potential employers some idea of who you are (to convince them that you are skilled, professional, and personable!) 
 					-->
 			
-			                <p> I'm a Master's Student in Biostatistics at the University of Washington. I have a Bachelor's degree in statistics from Hong Kong Baptist University. My research focuses on developing and applying statistical and deep learning models to genomic and single-cell data, aiming to uncover molecular mechanisms and cell-state heterogeneity through multimodal data integration. I am particularly interested in bridging modern inference with representation learning to understand complex biological systems such as Alzheimer’s disease. </p>
+			                <p> I'm a Master's Student in Biostatistics at the University of Washington. I have a Bachelor's degree in statistics from Hong Kong Baptist University. My research focuses on developing and applying statistical and deep learning models to genomic and single-cell data, aiming to uncover molecular mechanisms and cell-state heterogeneity through multimodal data integration. I am particularly interested in bridging modern inference with representation learning to understand complex biological systems such as Alzheimer's disease. </p>
 					
 					<p> Previously, I have worked on projects involving cross-modal alignment of single-cell morphology and transcriptomics, spatial transcriptomics–guided pathology modeling, and causal modeling of pediatric kidney function. </p>
 					
@@ -93,23 +93,61 @@ We are borrowing this template for use with the capstone program
 		
 		            <!-- Research Experience -->
             <div class="col-md-8" style="height: 100vh;">    
-                <h2 id="projects" style="margin-top: 5px;">Projects</h2>
+                <h2 id="research" style="margin-top: 5px;">Research Experience</h2>
+		
 		<strong>Integrating Single-Cell Morphology and Gene Expression for Cross-Modal Analysis</strong><br>
+		<i>First-author, Supervised by Prof. Kevin Z. Lin, University of Washington | Jan. 2025 - Present</i><br>
                 <ul>
                 <li> Developed GeoAdVAE, a PyTorch-based geometry-aware adversarial autoencoder integrating neural cell morphology and transcriptomics via a novel multi-objective loss fusing adversarial network and Gromov–Wasserstein alignment. </li>
 		<li> Designed the first known biologically interpretable simulation linking gene expression to neuronal morphology, providing insightful visualizations of pyramidal, bipolar, and multipolar neuron structures. </li>
 		<li> Validated the model on real paired Patch-seq and simulated data under an unpaired integration setting, where our framework achieved an average ~20% higher cell-type alignment accuracy compared to 11 benchmark methods. </li>
-		<li> Integrated unpaired morphology and transcriptomic data from distinct cohorts in Alzheimer’s dataset and performed cross-modal inference in the shared latent space, discovering morphology-linked genes associated with Alzheimer’s pathology. </li>
-		<li> Presented research findings as a <a href="https://docs.google.com/presentation/d/1iy82r5AF1se86gy0glHxMBuV67iL7jcje6yCPcFgbRA/edit?usp=sharing">poster at the 2025 American Society of Human Genetics (ASHG)</a> in Boston.
+		<li> Integrated unpaired morphology and transcriptomic data from distinct cohorts in Alzheimer's dataset and performed cross-modal inference in the shared latent space, discovering morphology-linked genes associated with Alzheimer's pathology. </li>
+		<li> Presented research findings as a <a href="https://docs.google.com/presentation/d/1iy82r5AF1se86gy0glHxMBuV67iL7jcje6yCPcFgbRA/edit?usp=sharing">poster at the 2025 American Society of Human Genetics (ASHG)</a> in Boston. </li>
 		</ul>
+		
+		<strong>STPath – Spatial Transcriptomics-Guided Deep Learning for Pathology Image Analysis</strong><br>
+		<i>Research Assistant, Supervised by Prof. Wei Sun, Fred Hutch Cancer Center | Feb. 2025 – Present</i><br>
+		<ul>
+		<li> Developed an end-to-end pipeline integrating single-cell RNA-seq, spatial transcriptomics, and histopathology image features to identify spatial cell-type distributions in lung cancer. </li>
+		<li> Proposed a modified CARD R package enabling custom differentially expressed genes (DEGs) for cell-type deconvolution. </li>
+		<li> Extracted latent representations from multiple vision foundation models (CONCH, ProvGigapath, Virchow, UNI2h, etc.) to learn high-dimensional feature embeddings from histopathology slide images. </li>
+		<li> Leveraged XGBoost in Python to infer cell-type composition from histology-derived embeddings, reaching a Pearson correlation of ~0.7 on held-out test samples. </li>
+		</ul>
+		
+		<strong>Cohort-level Differential Distributional Analysis for Studying Microglia in Alzheimer's Disease via Single-Nuclei RNA-Sequencing</strong><br>
+		<i>Co-author, Collaborated with Prof. Kevin Z. Lin & UW Neuroscience | Sep. 2024 – Jun. 2025</i><br>
+		<ul>
+		<li> Designed and implemented a distribution-based framework (Was2CoDE) for identifying cohort-level shifts in microglial gene expression using single-nuclei RNA-seq data from Alzheimer's disease patients. </li>
+		<li> Developed nonparametric Wasserstein-based metrics to quantify transcriptomic distributional differences beyond mean-level changes, capturing disease-specific heterogeneity missed by traditional DE analysis. </li>
+		<li> Built a reproducible Python pipeline for data preprocessing, statistical modeling, and visualization, benchmarked against classical DE methods, achieving a ~25% increase in sensitivity for detecting subtype-specific microglial activation patterns. </li>
+		</ul>
+		
+		<strong>Modeling Abnormal Ambulatory Blood Pressure (ABPM) and Kidney Function Progression</strong><br>
+		<i>Research Assistant, Collaborated with Prof. Sangeeta R Hingorani, Seattle Children's Hospital | Jul. 2024 – Sep. 2024</i><br>
+		<ul>
+		<li> Led two pediatric nephrology studies on nocturnal blood pressure variability and renal function in solitary kidney. </li>
+		<li> Proposed an adaptive Cox modeling framework with time-dependent covariate updating to address irregular follow-up and informative censoring, improving dynamic risk estimation of daytime hypertension in pediatric cohorts. </li>
+		<li> Developed a novel REML-imputation hybrid mixed model to jointly address missing at random (MAR) data and within-subject correlation, enabling robust estimation of complex nonlinear eGFR trajectories over time. </li>
+		<li> Both projects presented at UWSOM's Seattle Poster Symposium and submitted to the 2026 Western Medical Research Conference. </li>
+		</ul>
+		
+		<strong>Optimization of Healthcare Resource Allocation During the COVID-19 Pandemic</strong><br>
+		<i>First-author, Supervised by Prof. Jingjin Wu & Prof. Yuhui Deng | Jan. 2023 – Dec. 2024</i><br>
+		<ul>
+		<li> Developed a novel optimization framework integrating an extended SVUIR epidemiological model with a linearized mixed-integer programming (MIP) formulation to jointly allocate vaccines and ventilators under dynamic outbreak conditions. </li>
+		<li> Implemented and refined the mathematical model using real COVID-19 data, linearizing nonlinear constraints via Big-M methods, and achieved >60% higher computational efficiency and up to 70% cost reduction versus baseline strategies. </li>
+		<li> Applied the framework to generate optimized allocation plans across 17 age groups and 5 regions over a 400-day horizon during the COVID-19 pandemic. </li>
+		</ul>
+		
 		<strong>Analysis and Optimization of UAV Energy Consumption for Fog Computing</strong><br>
+		<i>Project Director, Supervised by Prof. Jingjin Wu & Prof. Yuhui Deng | Jun. 2022 – Jan. 2024</i><br>
                 <ul>
-                <li> Developed a fuzzy PID attitude control system to facilitate the UAV in accomplishing the tasks of takeoff, stable flight, and smooth landings. </li>
-		<li> Proposed an anti-locking Ant Colony Optimization algorithm with decoupling and safety to identify the optimal path with an improving the convergence speed.</li>
-		<li> Conducted stability testing of the model by simulating real-time UAV flight data and user’s computing demand data in Matlab. </li>
-		<li> Analyzed the performance of the optimized implementation, achieving a ≥34% increase in total network consumption efficiency compared to an existing model. </li>
+                <li> Developed an adaptive control algorithm to ensure UAV flight stability under dynamic weather and terrain conditions. </li>
+		<li> Proposed an improved ant colony optimization algorithm for UAV 3D trajectory planning and computing task assignment, achieving faster convergence and avoiding local optima. </li>
+		<li> Integrated real-world meteorological and terrain data into risk simulations, improving crash prediction accuracy. </li>
+		<li> Utilized a holistic optimization framework to enable optimal UAV task allocation under energy-efficient flight paths, achieving a ≥34% gain in energy efficiency and 2.6× higher task completion rate over baselines. </li>
+		<li> The project received individual funding support from the Provincial Government's "Climbing Plan" special fund. </li>
 		</ul>
-		    
 
             </div>
 
