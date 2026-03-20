@@ -9,7 +9,7 @@ We are borrowing this template for use with the capstone program
 
 <html lang="en">
 <head>
-  <title>Turbo Du</title> <!-- EDIT YOUR NAME HERE -->
+  <title>Turbo Du</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -148,6 +148,83 @@ We are borrowing this template for use with the capstone program
       margin: 0 auto 20px auto;
       display: block;
     }
+
+    /* Research entry styling */
+    .research-entry {
+      margin-bottom: 28px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #f0f4f8;
+    }
+
+    .research-entry:last-of-type {
+      border-bottom: none;
+    }
+
+    .research-entry .entry-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      color: #1a202c;
+      font-size: 15.5px;
+      margin-bottom: 2px;
+    }
+
+    .research-entry .entry-meta {
+      color: #718096;
+      font-size: 13.5px;
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+
+    .research-entry .entry-links {
+      margin-top: 8px;
+      font-size: 13.5px;
+    }
+
+    .research-entry .entry-links a {
+      display: inline-block;
+      margin-right: 10px;
+      color: #2c5282;
+      font-weight: 600;
+    }
+
+    .badge-tag {
+      display: inline-block;
+      background-color: #ebf8ff;
+      color: #2b6cb0;
+      border: 1px solid #bee3f8;
+      padding: 2px 9px;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+
+    .badge-award {
+      background-color: #fffff0;
+      color: #975a16;
+      border-color: #fbd38d;
+    }
+
+    /* Teaching entry */
+    .teaching-entry {
+      margin-bottom: 20px;
+    }
+
+    .teaching-entry .entry-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      color: #1a202c;
+      font-size: 15px;
+      margin-bottom: 2px;
+    }
+
+    .teaching-entry .entry-meta {
+      color: #718096;
+      font-size: 13.5px;
+      font-style: italic;
+      margin-bottom: 6px;
+    }
   </style>
 </head>
 <body>
@@ -189,23 +266,17 @@ We are borrowing this template for use with the capstone program
             <div class="col-md-9">
                 <div class="content-card">
                 
-		<!-- UPDATE THE TEXT BELOW HERE WITH YOUR OWN TEXT -->
                 <div style="margin-top:3%; text-align:justify;">
-					<!--
-					This is where you would introduce yourself. You might include links to things <a href="//google.com">RANDOM LINK TO GOOGLE</a>. You might have links to outside websites or things like your resume.
-					
-					You might also talk about groups that you have worked with (and perhaps link to them), and/or put your interests here!
-					
-					<p>The goal is to give potential employers some idea of who you are (to convince them that you are skilled, professional, and personable!) 
-					-->
 			
-			                <p> I'm a Master's Student in Biostatistics at the University of Washington. I have a Bachelor's degree in statistics from Hong Kong Baptist University. My research focuses on developing and applying statistical and deep learning models to genomic and single-cell data, aiming to uncover molecular mechanisms and cell-state heterogeneity through multimodal data integration. I am particularly interested in bridging modern inference with representation learning to understand complex biological systems such as Alzheimer's disease. </p>
+			        <p>I'm an incoming Ph.D. student in Biomedical Data Science at the <strong>University of Wisconsin–Madison</strong>, starting Fall 2026. I hold a Master's degree in Biostatistics (Modeling and Methods Track) from the University of Washington and a Bachelor's degree (First Class Honors) in Statistics from Hong Kong Baptist University.</p>
 					
-					<p> Previously, I have worked on projects involving cross-modal alignment of single-cell morphology and transcriptomics, spatial transcriptomics–guided pathology modeling, and causal modeling of pediatric kidney function. </p>
+					<p>My research focuses on developing and applying statistical and deep learning models to genomic and single-cell data, aiming to uncover molecular mechanisms and cell-state heterogeneity through multimodal data integration. I am particularly interested in bridging modern statistical inference with representation learning to understand complex biological systems such as Alzheimer's disease.</p>
 					
-					<p> I am broadly interested in statistics, computational biology, and data science, and enjoy building methods that combine theory, computation, and biology. </p>
+					<p>Previously, I have worked on projects involving cross-modal alignment of single-cell morphology and transcriptomics, spatial transcriptomics–guided pathology modeling, and causal modeling of pediatric kidney function.</p>
+					
+					<p>I am broadly interested in statistics, computational biology, and data science, and enjoy building methods that combine theory, computation, and biology.</p>
 			
-					<p> For more information about me, please check out my <a href="Resume.pdf">resume</a>, or reach out via email or <a href="https://www.linkedin.com/in/turbodu/">linkedin</a>.
+					<p>For more information about me, please check out my <a href="Resume.pdf">resume</a>, or reach out via email or <a href="https://www.linkedin.com/in/turbodu/">LinkedIn</a>.</p>
 					
 					<hr style="margin: 25px 0; border-top: 1px solid #e0e0e0;">
 					
@@ -232,7 +303,7 @@ We are borrowing this template for use with the capstone program
                 <div class="name-title" style="font-size: 24px; text-align: center;"><b>Jinqiu (Turbo) Du</b></div><br>
                 <p><i class="fas fa-envelope contact-icon"></i><b><a href="mailto:turbodu@uw.edu">turbodu@uw.edu</a></b><br>
                 <p>Biostatistics Master's Student<br>
-		<p> University of Washington <br>
+		        <p>University of Washington<br>
                 </p>
                 <hr style="margin: 15px 0;">
                 <p><i class="fab fa-linkedin contact-icon"></i><a href="https://www.linkedin.com/in/turbodu/">LinkedIn</a></p>
@@ -240,132 +311,154 @@ We are borrowing this template for use with the capstone program
             </div>
             
 		
-		            <!-- Research Experience -->
+		        <!-- Research Experience -->
             <div class="col-md-9">
                 <div class="content-card" style="margin-top: 5px;">
                 <h2 id="research" style="margin-top: 5px;">Research Experience</h2>
 		
-		<strong>Integrating Single-Cell Morphology and Gene Expression for Cross-Modal Analysis</strong><br>
-		<i>First-author, Supervised by Prof. Kevin Z. Lin, University of Washington | Jan. 2025 - Present</i><br>
-                <ul>
-                <li> Developed GeoAdVAE, a PyTorch-based geometry-aware adversarial autoencoder integrating neural cell morphology and transcriptomics via a novel multi-objective loss fusing adversarial network and Gromov–Wasserstein alignment. </li>
-		<li> Designed the first known biologically interpretable simulation linking gene expression to neuronal morphology, providing insightful visualizations of pyramidal, bipolar, and multipolar neuron structures. </li>
-		<li> Validated the model on real paired Patch-seq and simulated data under an unpaired integration setting, where our framework achieved an average ~20% higher cell-type alignment accuracy compared to 11 benchmark methods. </li>
-		<li> Integrated unpaired morphology and transcriptomic data from distinct cohorts in Alzheimer's dataset and performed cross-modal inference in the shared latent space, discovering morphology-linked genes associated with Alzheimer's pathology. </li>
-		</ul>
+		        <!-- GeoAdvAE -->
+		        <div class="research-entry">
+		          <div class="entry-title">
+		            Integrating Single-Cell Morphology and Gene Expression for Cross-Modal Analysis
+		            <span class="badge-tag">RECOMB 2026</span>
+		          </div>
+		          <div class="entry-meta">First author · Supervised by Prof. Kevin Z. Lin, University of Washington · Jan. 2025 – Present</div>
+		          <p>
+		            A fundamental challenge in single-cell biology is that two of the most information-rich data modalities — a cell's physical shape (morphology) and its gene expression profile — are rarely measured together on the same cells. Without paired observations, it is unclear whether morphology and transcriptomics reflect the same underlying cell states, or how to transfer information between them. To address this, we developed <strong>GeoAdvAE</strong>, a geometry-aware adversarial variational autoencoder built in PyTorch. The model jointly encodes both modalities into a shared latent space using a multi-objective loss that combines adversarial alignment with Gromov–Wasserstein optimal transport — a technique that aligns geometric structures across spaces without requiring point-to-point correspondences. On benchmark Patch-seq data (where neurons have both morphology and RNA-seq measured), GeoAdvAE achieved roughly 20% higher cell-type alignment accuracy than 11 competing methods. We further applied it to unpaired microglia data from a mouse model of Alzheimer's disease, uncovering morphology-associated gene programs tied to disease-relevant microglial states.
+		          </p>
+		          <div class="entry-links">
+		            <a href="https://github.com/turbodu222/GeoAdVAE" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+		            <a href="https://www.biorxiv.org/content/10.1101/2025.11.19.689368v2" target="_blank"><i class="fas fa-file-alt"></i> bioRxiv</a>
+		            <span style="color: #718096; font-size: 13px;">Accepted at Research in Computational Molecular Biology (RECOMB), 2026</span>
+		          </div>
+		        </div>
+
+		        <!-- STPath -->
+		        <div class="research-entry">
+		          <div class="entry-title">STPath – Spatial Transcriptomics-Guided Deep Learning for Pathology Image Analysis</div>
+		          <div class="entry-meta">Research Assistant · Supervised by Prof. Wei Sun, Fred Hutchinson Cancer Center · Feb. 2025 – Present</div>
+		          <p>
+		            Histopathology slides — high-resolution tissue images reviewed by pathologists — contain rich spatial information about tumor microenvironments, but quantifying cell-type composition from images alone is a hard problem. Spatial transcriptomics, which measures gene expression at spatially resolved spots in a tissue section, offers a natural supervision signal. We developed an end-to-end pipeline that deconvolves cell-type proportions from spatial transcriptomics data (using a modified CARD R package with custom differentially expressed genes), then uses those proportions to supervise a downstream image model. Latent embeddings from multiple pathology vision foundation models (CONCH, ProvGigapath, Virchow, UNI2h) are extracted from the slide images, and an XGBoost model is trained to predict cell-type composition directly from image features — reaching a Pearson correlation of ~0.7 on held-out lung cancer samples. The result is a workflow that bridges molecular measurements and pathology imaging without requiring expensive paired data at prediction time.
+		          </p>
+		        </div>
+
+		        <!-- Was2CoDE / Microglia -->
+		        <div class="research-entry">
+		          <div class="entry-title">Cohort-Level Differential Distributional Analysis of Microglia in Alzheimer's Disease</div>
+		          <div class="entry-meta">Co-author · Supervised by Prof. Kevin Z. Lin & UW Neuroscience · Sep. 2024 – Jun. 2025</div>
+		          <p>
+		            Standard differential expression (DE) analysis compares mean gene expression levels between groups — but in complex diseases like Alzheimer's, the interesting biology often lives in the <em>shape</em> of the expression distribution rather than its average. Microglia, the brain's immune cells, are particularly heterogeneous: the same bulk-level average can mask very different subpopulation structures across cohorts. We developed <strong>Was2CoDE</strong>, a Python framework using nonparametric Wasserstein-based metrics to detect cohort-level distributional shifts in microglial gene expression from single-nuclei RNA-seq data. We benchmarked it against classical DE methods (edgeR, DESeq2, eSVD, and an scVI-based framework) through extensive downsampling experiments across multiple real datasets (Prater, SEA-AD, ROS-MAP), finding approximately 25% higher sensitivity for detecting subtype-specific microglial activation patterns that traditional methods miss.
+		          </p>
+		        </div>
+
+		        <!-- Kidney -->
+		        <div class="research-entry">
+		          <div class="entry-title">
+		            Survival Modeling of Abnormal Ambulatory Blood Pressure and Kidney Function in Pediatric Patients
+		            <span class="badge-tag">WMRC 2026</span>
+		            <span class="badge-tag">PAS 2026</span>
+		            <span class="badge-tag badge-award">🏆 Best Abstract Award</span>
+		          </div>
+		          <div class="entry-meta">Research Assistant · Collaborated with Prof. Sangeeta R. Hingorani, Seattle Children's Hospital · Jul. 2024 – Sep. 2024</div>
+		          <p>
+		            Pediatric patients with kidney abnormalities are followed longitudinally over years, but their clinic visits are irregular, data is often missing, and blood pressure measurements are recorded around the clock (ambulatory monitoring) — all of which break standard longitudinal modeling assumptions. I contributed to two related nephrology studies. The first examined how nocturnal hypertension predicts future daytime hypertension in otherwise healthy children; to handle irregular follow-up and informative censoring, I proposed an adaptive Cox modeling framework with time-dependent covariate updating. The second study tracked kidney function decline in children with a solitary functioning kidney, where I developed a REML-imputation hybrid mixed model to jointly address missing-at-random data and within-subject correlation, enabling robust estimation of nonlinear eGFR trajectories. Both studies were accepted for presentation at the Western Medical Research Conference (WMRC) 2026 and the Pediatric Academic Societies (PAS) Conference 2026, and the work received the <strong>Best Gastroenterology, Hepatology & Nephrology Abstract Award</strong> from the Western Society for Pediatric Research.
+		          </p>
+		        </div>
+
+		        <!-- COVID -->
+		        <div class="research-entry">
+		          <div class="entry-title">Optimization of Healthcare Resource Allocation During the COVID-19 Pandemic</div>
+		          <div class="entry-meta">First author · Supervised by Prof. Jingjin Wu & Prof. Yuhui Deng · Jan. 2023 – Dec. 2024</div>
+		          <p>
+		            When vaccines and ventilators are both scarce and their demands are intertwined with epidemic dynamics, allocating them efficiently across heterogeneous populations is a challenging combinatorial optimization problem. We tackled this by building a joint optimization framework that couples an extended SVUIR epidemiological model (tracking Susceptible, Vaccinated, Undetected, Infected, and Recovered compartments) with a linearized mixed-integer program (MIP). Nonlinear constraints were linearized via Big-M methods to make the problem tractable at scale. Applied to real COVID-19 data across 17 age groups and 5 regions over a 400-day planning horizon, the framework achieved over 60% higher computational efficiency and up to 70% cost reduction relative to baseline heuristic strategies.
+		          </p>
+		        </div>
+
+		        <!-- UAV -->
+		        <div class="research-entry">
+		          <div class="entry-title">Optimization of UAV Trajectory Planning and Task Allocation in Fog Computing</div>
+		          <div class="entry-meta">Project Director · Supervised by Prof. Jingjin Wu & Prof. Yuhui Deng · Jun. 2022 – Jan. 2024</div>
+		          <p>
+		            UAVs deployed for edge/fog computing must simultaneously fly stable paths, complete assigned computational tasks, and conserve battery — objectives that conflict under real-world weather and terrain variability. I led a project that tackled this as a holistic 3D optimization problem. We developed an adaptive control algorithm for flight stability and proposed an improved ant colony optimization method for joint trajectory planning and task assignment, validated against real meteorological and terrain data. The framework achieved a ≥34% gain in energy efficiency and a 2.6× increase in task completion rate over baselines. The project was independently funded by the Provincial Government's "Climbing Plan" research grant.
+		          </p>
+		        </div>
 		
-		<strong>STPath – Spatial Transcriptomics-Guided Deep Learning for Pathology Image Analysis</strong><br>
-		<i>Research Assistant, Supervised by Prof. Wei Sun, Fred Hutch Cancer Center | Feb. 2025 – Present</i><br>
-		<ul>
-		<li> Developed an end-to-end pipeline integrating single-cell RNA-seq, spatial transcriptomics, and histopathology image features to identify spatial cell-type distributions in lung cancer. </li>
-		<li> Proposed a modified CARD R package enabling custom differentially expressed genes (DEGs) for cell-type deconvolution. </li>
-		<li> Extracted latent representations from multiple vision foundation models (CONCH, ProvGigapath, Virchow, UNI2h, etc.) to learn high-dimensional feature embeddings from histopathology slide images. </li>
-		<li> Leveraged XGBoost in Python to infer cell-type composition from histology-derived embeddings, reaching a Pearson correlation of ~0.7 on held-out test samples. </li>
-		</ul>
+		        <h2 id="talks" style="margin-top: 30px;">Talks</h2>
+		        <ul>
+		          <li><strong>"Integrating Single-Cell Morphology and Gene Expression for Cross-Modal Analysis"</strong>, Poster Presentation, American Society of Human Genetics (ASHG) Annual Meeting, Boston, MA, 2025. [<a href="https://docs.google.com/presentation/d/1iy82r5AF1se86gy0glHxMBuV67iL7jcje6yCPcFgbRA/edit?usp=sharing">Poster</a>]</li>
+		        </ul>
 		
-		<strong>Cohort-level Differential Distributional Analysis for Studying Microglia in Alzheimer's Disease via Single-Nuclei RNA-Sequencing</strong><br>
-		<i>Co-author, Collaborated with Prof. Kevin Z. Lin & UW Neuroscience | Sep. 2024 – Jun. 2025</i><br>
-		<ul>
-		<li> Designed and implemented a distribution-based framework (Was2CoDE) for identifying cohort-level shifts in microglial gene expression using single-nuclei RNA-seq data from Alzheimer's disease patients. </li>
-		<li> Developed nonparametric Wasserstein-based metrics to quantify transcriptomic distributional differences beyond mean-level changes, capturing disease-specific heterogeneity missed by traditional DE analysis. </li>
-		<li> Built a reproducible Python pipeline for data preprocessing, statistical modeling, and visualization, benchmarked against classical DE methods, achieving a ~25% increase in sensitivity for detecting subtype-specific microglial activation patterns. </li>
-		</ul>
+		        <h2 id="teaching" style="margin-top: 50px;">Teaching Experience</h2>
+
+		        <div class="teaching-entry">
+		          <div class="entry-title">Teaching Assistant – BIOST 546: Machine Learning for Biomedical and Public Health Big Data <span style="font-weight:400; font-size:13.5px;">(Graduate)</span></div>
+		          <div class="entry-meta">Department of Biostatistics, University of Washington · Dec. 2025 – Present</div>
+		          <p>Graded homework assignments and answer keys, and supported students with Python and R programming questions during office hours.</p>
+		        </div>
+
+		        <div class="teaching-entry">
+		          <div class="entry-title">Teaching Assistant – BIOST 310: Biostatistics for the Health Sciences <span style="font-weight:400; font-size:13.5px;">(Undergraduate)</span></div>
+		          <div class="entry-meta">Department of Biostatistics, University of Washington · Sep. 2025 – Dec. 2025</div>
+		          <p>Led weekly 2-hour discussion sections, held office hours, and graded coursework for a class of approximately 200 students.</p>
+		        </div>
+
+		        <div class="teaching-entry">
+		          <div class="entry-title">Tutor in Statistics – Statistics Study Center</div>
+		          <div class="entry-meta">Department of Statistics, University of Washington · Sep. 2024 – Present</div>
+		          <p>Provided weekly 4-hour tutoring sessions assisting approximately 30 undergraduate students with statistical coursework and R programming.</p>
+		        </div>
+
+		        <div class="teaching-entry">
+		          <div class="entry-title">Volunteer Contributor – BIOST 545: Biostatistical Methods for Big Omics Data <span style="font-weight:400; font-size:13.5px;">(Graduate)</span></div>
+		          <div class="entry-meta">Department of Biostatistics, University of Washington · May 2025 – Aug. 2025</div>
+		          <p>Built the course website using R and the Quarto framework to present lecture materials and reproducible code examples.</p>
+		        </div>
 		
-		<strong>Modeling Abnormal Ambulatory Blood Pressure (ABPM) and Kidney Function Progression</strong><br>
-		<i>Research Assistant, Collaborated with Prof. Sangeeta R Hingorani, Seattle Children's Hospital | Jul. 2024 – Sep. 2024</i><br>
-		<ul>
-		<li> Led two pediatric nephrology studies on nocturnal blood pressure variability and renal function in solitary kidney. </li>
-		<li> Proposed an adaptive Cox modeling framework with time-dependent covariate updating to address irregular follow-up and informative censoring, improving dynamic risk estimation of daytime hypertension in pediatric cohorts. </li>
-		<li> Developed a novel REML-imputation hybrid mixed model to jointly address missing at random (MAR) data and within-subject correlation, enabling robust estimation of complex nonlinear eGFR trajectories over time. </li>
-		<li> Both projects presented at UWSOM's Seattle Poster Symposium and submitted to the 2026 Western Medical Research Conference. </li>
-		</ul>
+		        <h2 id="skills" style="margin-top: 50px;">Skills</h2>
 		
-		<strong>Optimization of Healthcare Resource Allocation During the COVID-19 Pandemic</strong><br>
-		<i>First-author, Supervised by Prof. Jingjin Wu & Prof. Yuhui Deng | Jan. 2023 – Dec. 2024</i><br>
-		<ul>
-		<li> Developed a novel optimization framework integrating an extended SVUIR epidemiological model with a linearized mixed-integer programming (MIP) formulation to jointly allocate vaccines and ventilators under dynamic outbreak conditions. </li>
-		<li> Implemented and refined the mathematical model using real COVID-19 data, linearizing nonlinear constraints via Big-M methods, and achieved >60% higher computational efficiency and up to 70% cost reduction versus baseline strategies. </li>
-		<li> Applied the framework to generate optimized allocation plans across 17 age groups and 5 regions over a 400-day horizon during the COVID-19 pandemic. </li>
-		</ul>
+		        <div class="skills-category">
+			        <strong>Programming Languages</strong>
+			        <div>
+				        <span class="skill-tag">Python</span>
+				        <span class="skill-tag">R</span>
+				        <span class="skill-tag">MATLAB</span>
+				        <span class="skill-tag">C</span>
+				        <span class="skill-tag">Java</span>
+				        <span class="skill-tag">SQL</span>
+			        </div>
+		        </div>
 		
-		<strong>Analysis and Optimization of UAV Energy Consumption for Fog Computing</strong><br>
-		<i>Project Director, Supervised by Prof. Jingjin Wu & Prof. Yuhui Deng | Jun. 2022 – Jan. 2024</i><br>
-                <ul>
-                <li> Developed an adaptive control algorithm to ensure UAV flight stability under dynamic weather and terrain conditions. </li>
-		<li> Proposed an improved ant colony optimization algorithm for UAV 3D trajectory planning and computing task assignment, achieving faster convergence and avoiding local optima. </li>
-		<li> Integrated real-world meteorological and terrain data into risk simulations, improving crash prediction accuracy. </li>
-		<li> Utilized a holistic optimization framework to enable optimal UAV task allocation under energy-efficient flight paths, achieving a ≥34% gain in energy efficiency and 2.6× higher task completion rate over baselines. </li>
-		<li> The project received individual funding support from the Provincial Government's "Climbing Plan" special fund. </li>
-		</ul>
+		        <div class="skills-category">
+			        <strong>Tools & Software</strong>
+			        <div>
+				        <span class="skill-tag">PyTorch</span>
+				        <span class="skill-tag">TensorFlow</span>
+				        <span class="skill-tag">Git</span>
+				        <span class="skill-tag">Linux</span>
+				        <span class="skill-tag">LaTeX</span>
+				        <span class="skill-tag">SPSS</span>
+				        <span class="skill-tag">Lingo</span>
+				        <span class="skill-tag">Excel</span>
+			        </div>
+		        </div>
 		
-		<h2 id="talks" style="margin-top: 50px;">Talks</h2>
-		<ul>
-		<li> <strong>"Integrating Single-Cell Morphology and Gene Expression for Cross-Modal Analysis"</strong>, Poster Presentation, American Society of Human Genetics (ASHG) Annual Meeting, Boston, MA, 2025. [<a href="https://docs.google.com/presentation/d/1iy82r5AF1se86gy0glHxMBuV67iL7jcje6yCPcFgbRA/edit?usp=sharing">Poster</a>]
-		</ul>
+		        <div class="skills-category">
+			        <strong>Methods & Techniques</strong>
+			        <div>
+				        <span class="skill-tag">Deep Learning</span>
+				        <span class="skill-tag">Statistical Modeling</span>
+			        </div>
+		        </div>
 		
-		<h2 id="teaching" style="margin-top: 50px;">Teaching Experience</h2>
-		
-		<strong>Teaching Assistant, BIOST 310: Biostatistics for the Health Sciences</strong><br>
-		<i>Department of Biostatistics, University of Washington | Sep. 2025 - Present</i><br>
-		<ul>
-		<li> Led 2-hour discussions session per week, held office hours, and graded coursework for ~200 students. </li>
-		</ul>
-		
-		<strong>Tutor in Statistics, Statistics Study Center</strong><br>
-		<i>Department of Statistics, University of Washington | Sep. 2024 - Present</i><br>
-		<ul>
-		<li> Assisted ~30 undergraduate students weekly in statistical coursework and R programming during 4-hour tutoring sessions. </li>
-		</ul>
-		
-		<strong>Volunteer Contributor, BIOST 545: Biostatistical Methods for Big Omics Data</strong><br>
-		<i>Department of Biostatistics, University of Washington | May. 2025 - Aug. 2025</i><br>
-		<ul>
-		<li> Built course website with R (Quarto framework) to present lecture materials and reproducible code examples. </li>
-		</ul>
-		
-		<h2 id="skills" style="margin-top: 50px;">Skills</h2>
-		
-		<div class="skills-category">
-			<strong>Programming Languages</strong>
-			<div>
-				<span class="skill-tag">Python</span>
-				<span class="skill-tag">R</span>
-				<span class="skill-tag">MATLAB</span>
-				<span class="skill-tag">C</span>
-				<span class="skill-tag">Java</span>
-				<span class="skill-tag">SQL</span>
-			</div>
-		</div>
-		
-		<div class="skills-category">
-			<strong>Tools & Software</strong>
-			<div>
-				<span class="skill-tag">PyTorch</span>
-				<span class="skill-tag">TensorFlow</span>
-				<span class="skill-tag">Git</span>
-				<span class="skill-tag">Linux</span>
-				<span class="skill-tag">LaTeX</span>
-				<span class="skill-tag">SPSS</span>
-				<span class="skill-tag">Lingo</span>
-				<span class="skill-tag">Excel</span>
-			</div>
-		</div>
-		
-		<div class="skills-category">
-			<strong>Methods & Techniques</strong>
-			<div>
-				<span class="skill-tag">Deep Learning</span>
-				<span class="skill-tag">Statistical Modeling</span>
-			</div>
-		</div>
-		
-		<h2 id="awards" style="margin-top: 50px;">Awards</h2>
-		<ul>
-		<li> <strong>Finalist</strong>, COMAP Mathematical Contest in Modeling (MCM), Top 1% Worldwide, 2022 </li>
-		<li> <strong>Meritorious Winner</strong>, COMAP Mathematical Contest in Modeling (MCM), Top 6% Worldwide, 2023 </li>
-		<li> <strong>First-Class Academic Scholarship</strong>, Hong Kong Baptist University, Top 5%, 2022-2023 </li>
-		<li> <strong>Student Internship Scholarship</strong>, Hong Kong Baptist University, 2021 </li>
-		</ul>
+		        <h2 id="awards" style="margin-top: 50px;">Awards</h2>
+		        <ul>
+		          <li><strong>Best Gastroenterology, Hepatology & Nephrology Abstract Award</strong>, Western Society for Pediatric Research, 2025</li>
+		          <li><strong>Finalist</strong>, COMAP Mathematical Contest in Modeling (MCM), Top 1% Worldwide, 2022</li>
+		          <li><strong>Meritorious Winner</strong>, COMAP Mathematical Contest in Modeling (MCM), Top 6% Worldwide, 2023</li>
+		          <li><strong>First-Class Academic Scholarship</strong>, Hong Kong Baptist University, Top 5%, 2021–2023</li>
+		          <li><strong>President's Honour Roll</strong>, Hong Kong Baptist University, 2020–2024</li>
+		          <li><strong>Student Internship Scholarship</strong>, Hong Kong Baptist University, 2021</li>
+		        </ul>
                 </div>
             </div>
 
