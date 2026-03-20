@@ -15,7 +15,7 @@ We are borrowing this template for use with the capstone program
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <style>
@@ -34,9 +34,10 @@ We are borrowing this template for use with the capstone program
     .navbar-inverse .navbar-nav > li > a {
       color: #e6f0ff;
       transition: all 0.3s ease;
-      font-family: 'Playfair Display', serif;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 500;
-      letter-spacing: 0.04em;
+      font-size: 13px;
+      letter-spacing: 0.08em;
     }
     
     .navbar-inverse .navbar-nav > li > a:hover,
@@ -61,6 +62,7 @@ We are borrowing this template for use with the capstone program
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       margin-bottom: 20px;
+      font-family: 'DM Sans', sans-serif;
     }
     
     /* Section headers */
@@ -101,7 +103,7 @@ We are borrowing this template for use with the capstone program
       color: #2c5282;
       display: block;
       margin-bottom: 5px;
-      font-family: 'Playfair Display', serif;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 600;
     }
     
@@ -112,8 +114,9 @@ We are borrowing this template for use with the capstone program
       padding: 5px 12px;
       border-radius: 15px;
       margin: 3px;
-      font-size: 14px;
-      font-family: 'Source Serif 4', serif;
+      font-size: 13.5px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
     }
     
     /* Research Interests tags — monochrome scheme */
@@ -125,8 +128,8 @@ We are borrowing this template for use with the capstone program
       padding: 5px 14px;
       border-radius: 4px;
       margin: 4px 3px;
-      font-size: 13.5px;
-      font-family: 'Source Serif 4', serif;
+      font-size: 13px;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 400;
       transition: background-color 0.2s ease, border-color 0.2s ease;
     }
@@ -164,31 +167,33 @@ We are borrowing this template for use with the capstone program
     }
 
     .research-entry .entry-title {
-      font-family: 'Playfair Display', serif;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 600;
       color: #1a202c;
-      font-size: 15.5px;
+      font-size: 15px;
       margin-bottom: 2px;
     }
 
     .research-entry .entry-meta {
       color: #718096;
-      font-size: 13.5px;
-      font-style: italic;
-      font-family: 'Source Serif 4', serif;
+      font-size: 13px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
       margin-bottom: 10px;
     }
 
     .research-entry .entry-links {
       margin-top: 8px;
-      font-size: 13.5px;
+      font-size: 13px;
+      font-family: 'DM Sans', sans-serif;
     }
 
     .research-entry .entry-links a {
       display: inline-block;
       margin-right: 10px;
       color: #2c5282;
-      font-weight: 600;
+      font-weight: 500;
+      font-family: 'DM Sans', sans-serif;
     }
 
     .badge-tag {
@@ -198,9 +203,9 @@ We are borrowing this template for use with the capstone program
       border: 1px solid #bee3f8;
       padding: 2px 9px;
       border-radius: 10px;
-      font-size: 12px;
-      font-family: 'Source Serif 4', serif;
-      font-weight: 600;
+      font-size: 11.5px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
       margin-left: 6px;
       vertical-align: middle;
     }
@@ -217,7 +222,7 @@ We are borrowing this template for use with the capstone program
     }
 
     .teaching-entry .entry-title {
-      font-family: 'Playfair Display', serif;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 600;
       color: #1a202c;
       font-size: 15px;
@@ -226,9 +231,9 @@ We are borrowing this template for use with the capstone program
 
     .teaching-entry .entry-meta {
       color: #718096;
-      font-size: 13.5px;
-      font-style: italic;
-      font-family: 'Source Serif 4', serif;
+      font-size: 13px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
       margin-bottom: 6px;
     }
   </style>
@@ -307,10 +312,8 @@ We are borrowing this template for use with the capstone program
                 <div class="sidebar-card">
                 <img class="profile-photo" src="photo.jpg" alt="Jinqiu (Turbo) Du">
                 <div class="name-title" style="font-size: 24px; text-align: center;"><b>Jinqiu (Turbo) Du</b></div><br>
-                <p><i class="fas fa-envelope contact-icon"></i><b><a href="/cdn-cgi/l/email-protection#99edecebfbf6fdecd9eceeb7fcfdec"><span class="__cf_email__" data-cfemail="f88c8d8a9a979c8db88d8fd69d9c8d">[email&#160;protected]</span></a></b><br>
-                <p>Biostatistics Master's Student<br>
-		        <p>University of Washington<br>
-                </p>
+                <p><i class="fas fa-envelope contact-icon"></i><b><a href="mailto:turbodu@uw.edu">turbodu@uw.edu</a></b></p>
+                <p>Biostatistics Master's Student<br>University of Washington</p>
                 <hr style="margin: 15px 0;">
                 <p><i class="fab fa-linkedin contact-icon"></i><a href="https://www.linkedin.com/in/turbodu/">LinkedIn</a></p>
                 </div>
@@ -335,7 +338,7 @@ We are borrowing this template for use with the capstone program
 		          <div class="entry-links">
 		            <a href="https://github.com/turbodu222/GeoAdVAE" target="_blank"><i class="fab fa-github"></i> GitHub</a>
 		            <a href="https://www.biorxiv.org/content/10.1101/2025.11.19.689368v2" target="_blank"><i class="fas fa-file-alt"></i> bioRxiv</a>
-		            <span style="color: #718096; font-size: 13px;">Accepted at Research in Computational Molecular Biology (RECOMB), 2026</span>
+		            <span style="color: #718096; font-size: 13px; font-family: 'DM Sans', sans-serif;">Accepted at Research in Computational Molecular Biology (RECOMB), 2026</span>
 		          </div>
 		        </div>
 
@@ -397,13 +400,13 @@ We are borrowing this template for use with the capstone program
 		        <h2 id="teaching" style="margin-top: 50px;">Teaching Experience</h2>
 
 		        <div class="teaching-entry">
-		          <div class="entry-title">Teaching Assistant – BIOST 546: Machine Learning for Biomedical and Public Health Big Data <span style="font-weight:400; font-size:13.5px; font-family:'Source Serif 4', serif;">(Graduate)</span></div>
+		          <div class="entry-title">Teaching Assistant – BIOST 546: Machine Learning for Biomedical and Public Health Big Data <span style="font-weight:400; font-size:13px; font-family:'DM Sans', sans-serif;">(Graduate)</span></div>
 		          <div class="entry-meta">Department of Biostatistics, University of Washington · Dec. 2025 – Present</div>
 		          <p>Graded homework assignments and answer keys, and supported students with Python and R programming questions during office hours.</p>
 		        </div>
 
 		        <div class="teaching-entry">
-		          <div class="entry-title">Teaching Assistant – BIOST 310: Biostatistics for the Health Sciences <span style="font-weight:400; font-size:13.5px;">(Undergraduate)</span></div>
+		          <div class="entry-title">Teaching Assistant – BIOST 310: Biostatistics for the Health Sciences <span style="font-weight:400; font-size:13px; font-family:'DM Sans', sans-serif;">(Undergraduate)</span></div>
 		          <div class="entry-meta">Department of Biostatistics, University of Washington · Sep. 2025 – Dec. 2025</div>
 		          <p>Led weekly 2-hour discussion sections, held office hours, and graded coursework for a class of approximately 200 students.</p>
 		        </div>
@@ -415,7 +418,7 @@ We are borrowing this template for use with the capstone program
 		        </div>
 
 		        <div class="teaching-entry">
-		          <div class="entry-title">Volunteer Contributor – BIOST 545: Biostatistical Methods for Big Omics Data <span style="font-weight:400; font-size:13.5px;">(Graduate)</span></div>
+		          <div class="entry-title">Volunteer Contributor – BIOST 545: Biostatistical Methods for Big Omics Data <span style="font-weight:400; font-size:13px; font-family:'DM Sans', sans-serif;">(Graduate)</span></div>
 		          <div class="entry-meta">Department of Biostatistics, University of Washington · May 2025 – Aug. 2025</div>
 		          <p>Built the course website using R and the Quarto framework to present lecture materials and reproducible code examples.</p>
 		        </div>
