@@ -1,470 +1,719 @@
 <!DOCTYPE html>
-<!--
-    Plain-Academic by Vasilios Mavroudis
-    Released under the Simplified BSD License/FreeBSD (2-clause) License.
-    https://github.com/mavroudisv/plain-academic
-
-We are borrowing this template for use with the capstone program
--->
-
 <html lang="en">
 <head>
-  <title>Turbo Du</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <title>Jinqiu (Turbo) Du</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
+
   <style>
-    /* Custom color scheme - Academic deep blue */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --bg:       #f7f5f0;
+      --ink:      #1c1c1c;
+      --ink-2:    #5a5a5a;
+      --ink-3:    #9a9a9a;
+      --rule:     #d4cfc7;
+      --rule-lt:  #e6e2da;
+      --accent:   #2c3e50;
+      --gold-bg:  #fdf8ee;
+      --gold-bd:  #c8a96b;
+      --gold-tx:  #7a5c1e;
+      --ff-serif: 'Playfair Display', Georgia, serif;
+      --ff-body:  'Source Serif 4', Georgia, serif;
+      --ff-sans:  'DM Sans', system-ui, sans-serif;
+      --max:      800px;
+      --pad-x:    clamp(24px, 5vw, 60px);
+    }
+
     body {
-      background-color: #f5f7fa;
-      font-family: 'Source Serif 4', Georgia, serif;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--ff-body);
+      font-size: 16px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
     }
-    
-    /* Navbar styling */
-    .navbar-inverse {
-      background-color: #0a1929;
-      border-color: #050d17;
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 0.5px solid var(--rule);
+      padding: 0 var(--pad-x);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 52px;
     }
-    
-    .navbar-inverse .navbar-nav > li > a {
-      color: #e6f0ff;
-      transition: all 0.3s ease;
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 500;
-      font-size: 13px;
-      letter-spacing: 0.08em;
-    }
-    
-    .navbar-inverse .navbar-nav > li > a:hover,
-    .navbar-inverse .navbar-nav > li > a:focus {
-      background-color: #050d17;
-      color: #ffffff;
-    }
-    
-    /* Main content card effect */
-    .content-card {
-      background-color: #ffffff;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      margin-bottom: 2px;
-    }
-    
-    /* Sidebar card effect */
-    .sidebar-card {
-      background-color: #ffffff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      margin-bottom: 20px;
-      font-family: 'DM Sans', sans-serif;
-    }
-    
-    /* Section headers */
-    h2 {
-      color: #2c5282;
-      border-bottom: 2px solid #e6f0ff;
-      padding-bottom: 10px;
-      margin-bottom: 20px;
-      font-family: 'Playfair Display', serif;
+
+    .nav-name {
+      font-family: var(--ff-serif);
+      font-size: 15px;
       font-weight: 700;
+      color: var(--ink);
     }
-    
-    /* Links */
-    a {
-      color: #2c5282;
-      transition: color 0.3s ease;
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
     }
-    
-    a:hover {
-      color: #1a365d;
+
+    .nav-links a {
+      font-family: var(--ff-sans);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-2);
       text-decoration: none;
+      transition: color 0.2s;
     }
-    
-    /* Icons */
-    .contact-icon {
-      color: #2c5282;
-      margin-right: 8px;
-      width: 20px;
-      display: inline-block;
+
+    .nav-links a:hover { color: var(--ink); text-decoration: none; }
+
+    /* ── Page wrapper ── */
+    .page {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 var(--pad-x);
     }
-    
-    /* Skills styling */
-    .skills-category {
-      margin-bottom: 15px;
+
+    /* ── Hero ── */
+    .hero {
+      display: grid;
+      grid-template-columns: 114px 1fr;
+      gap: 40px;
+      align-items: start;
+      padding: 64px 0 52px;
+      border-bottom: 0.5px solid var(--rule);
     }
-    
-    .skills-category strong {
-      color: #2c5282;
-      display: block;
-      margin-bottom: 5px;
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 600;
-    }
-    
-    .skill-tag {
-      display: inline-block;
-      background-color: #e6f0ff;
-      color: #2c5282;
-      padding: 5px 12px;
-      border-radius: 15px;
-      margin: 3px;
-      font-size: 13.5px;
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 400;
-    }
-    
-    /* Research Interests tags — monochrome scheme */
-    .interest-tag {
-      display: inline-block;
-      background-color: #f0f2f5;
-      color: #2d3748;
-      border: 0.5px solid #cbd5e0;
-      padding: 5px 14px;
-      border-radius: 4px;
-      margin: 4px 3px;
-      font-size: 13px;
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 400;
-      transition: background-color 0.2s ease, border-color 0.2s ease;
-    }
-    
-    .interest-tag:hover {
-      background-color: #e2e8f0;
-      border-color: #a0aec0;
-    }
-    
-    /* Name title */
-    .name-title {
-      font-family: 'Playfair Display', serif;
-    }
-    
-    /* Profile photo styling */
-    .profile-photo {
-      width: 180px;
-      height: 180px;
+
+    .hero-photo {
+      width: 104px;
+      height: 104px;
       border-radius: 50%;
       object-fit: cover;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      margin: 0 auto 20px auto;
       display: block;
+      margin-top: 6px;
     }
 
-    /* Research entry styling */
-    .research-entry {
-      margin-bottom: 28px;
-      padding-bottom: 24px;
-      border-bottom: 1px solid #f0f4f8;
+    .hero-name {
+      font-family: var(--ff-serif);
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--ink);
+      margin-bottom: 7px;
     }
 
-    .research-entry:last-of-type {
-      border-bottom: none;
-    }
-
-    .research-entry .entry-title {
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 600;
-      color: #1a202c;
-      font-size: 15px;
-      margin-bottom: 2px;
-    }
-
-    .research-entry .entry-meta {
-      color: #718096;
-      font-size: 13px;
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 400;
-      margin-bottom: 10px;
-    }
-
-    .research-entry .entry-links {
-      margin-top: 8px;
-      font-size: 13px;
-      font-family: 'DM Sans', sans-serif;
-    }
-
-    .research-entry .entry-links a {
-      display: inline-block;
-      margin-right: 10px;
-      color: #2c5282;
-      font-weight: 500;
-      font-family: 'DM Sans', sans-serif;
-    }
-
-    .badge-tag {
-      display: inline-block;
-      background-color: #ebf8ff;
-      color: #2b6cb0;
-      border: 1px solid #bee3f8;
-      padding: 2px 9px;
-      border-radius: 10px;
+    .hero-role {
+      font-family: var(--ff-sans);
       font-size: 11.5px;
-      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+      margin-bottom: 20px;
+    }
+
+    .hero-bio {
+      font-family: var(--ff-body);
+      font-size: 15.5px;
+      line-height: 1.82;
+      color: var(--ink-2);
+      margin-bottom: 14px;
+    }
+
+    .hero-bio strong { color: var(--ink); font-weight: 600; }
+
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 20px;
+      align-items: center;
+      margin-top: 22px;
+    }
+
+    .hero-links a {
+      font-family: var(--ff-sans);
+      font-size: 12.5px;
       font-weight: 500;
-      margin-left: 6px;
-      vertical-align: middle;
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 0.5px solid var(--ink-3);
+      padding-bottom: 1px;
+      transition: border-color 0.2s;
+    }
+
+    .hero-links a:hover { border-color: var(--ink); text-decoration: none; }
+
+    /* ── Interests ── */
+    .interests-block {
+      padding: 28px 0 26px;
+      border-bottom: 0.5px solid var(--rule);
+    }
+
+    .interests-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 2px 0;
+    }
+
+    .interest-item {
+      font-family: var(--ff-sans);
+      font-size: 12.5px;
+      color: var(--ink-2);
+      letter-spacing: 0.02em;
+    }
+
+    .interest-sep {
+      font-size: 12px;
+      color: var(--rule);
+      padding: 0 6px;
+      user-select: none;
+    }
+
+    /* ── Section ── */
+    section {
+      padding: 52px 0 0;
+    }
+
+    section:last-of-type {
+      padding-bottom: 80px;
+    }
+
+    .section-label {
+      font-family: var(--ff-sans);
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+      margin-bottom: 28px;
+      padding-bottom: 14px;
+      border-bottom: 0.5px solid var(--rule);
+    }
+
+    /* ── Research entries ── */
+    .entry {
+      display: grid;
+      grid-template-columns: 1fr 96px;
+      gap: 0 20px;
+      padding-bottom: 38px;
+      margin-bottom: 38px;
+      border-bottom: 0.5px solid var(--rule-lt);
+    }
+
+    .entry:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .entry-title {
+      font-family: var(--ff-sans);
+      font-size: 14.5px;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.45;
+      margin-bottom: 5px;
+    }
+
+    .entry-meta {
+      font-family: var(--ff-sans);
+      font-size: 11px;
+      color: var(--ink-3);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 13px;
+    }
+
+    .entry-body {
+      font-family: var(--ff-body);
+      font-size: 15px;
+      line-height: 1.82;
+      color: var(--ink-2);
+    }
+
+    .entry-body em  { font-style: italic; }
+    .entry-body strong { font-weight: 600; color: var(--ink); }
+
+    .entry-links {
+      margin-top: 13px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 18px;
+      align-items: center;
+    }
+
+    .entry-links a {
+      font-family: var(--ff-sans);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 0.5px solid var(--ink-3);
+      padding-bottom: 1px;
+    }
+
+    .entry-links a:hover { border-color: var(--ink); text-decoration: none; }
+
+    .entry-links .note {
+      font-family: var(--ff-sans);
+      font-size: 11.5px;
+      color: var(--ink-3);
+      font-style: italic;
+    }
+
+    .badges {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding-top: 4px;
+      align-items: flex-end;
+    }
+
+    .badge {
+      font-family: var(--ff-sans);
+      font-size: 9.5px;
+      font-weight: 500;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--ink-2);
+      border: 0.5px solid var(--rule);
+      padding: 3px 8px;
+      border-radius: 2px;
+      white-space: nowrap;
     }
 
     .badge-award {
-      background-color: #fffff0;
-      color: #975a16;
-      border-color: #fbd38d;
+      color: var(--gold-tx);
+      border-color: var(--gold-bd);
+      background: var(--gold-bg);
     }
 
-    /* Teaching entry */
-    .teaching-entry {
-      margin-bottom: 20px;
-    }
-
-    .teaching-entry .entry-title {
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 600;
-      color: #1a202c;
+    /* ── Talks ── */
+    .talk-item {
+      font-family: var(--ff-body);
       font-size: 15px;
-      margin-bottom: 2px;
+      line-height: 1.82;
+      color: var(--ink-2);
     }
 
-    .teaching-entry .entry-meta {
-      color: #718096;
-      font-size: 13px;
-      font-family: 'DM Sans', sans-serif;
+    .talk-item strong { color: var(--ink); font-weight: 600; }
+
+    /* ── Teaching ── */
+    .t-entry {
+      padding-bottom: 28px;
+      margin-bottom: 28px;
+      border-bottom: 0.5px solid var(--rule-lt);
+    }
+
+    .t-entry:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .t-title {
+      font-family: var(--ff-sans);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.45;
+      margin-bottom: 4px;
+    }
+
+    .t-title span {
       font-weight: 400;
-      margin-bottom: 6px;
+      color: var(--ink-3);
+    }
+
+    .t-meta {
+      font-family: var(--ff-sans);
+      font-size: 11px;
+      color: var(--ink-3);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 9px;
+    }
+
+    .t-body {
+      font-family: var(--ff-body);
+      font-size: 15px;
+      line-height: 1.78;
+      color: var(--ink-2);
+    }
+
+    /* ── Skills ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 18px 28px;
+      align-items: baseline;
+    }
+
+    .skills-cat {
+      font-family: var(--ff-sans);
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--ink-3);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .skills-list {
+      font-family: var(--ff-sans);
+      font-size: 13.5px;
+      color: var(--ink-2);
+      line-height: 1.7;
+    }
+
+    /* ── Awards ── */
+    .award-item {
+      display: grid;
+      grid-template-columns: 1fr 58px;
+      gap: 3px 16px;
+      align-items: baseline;
+      padding: 13px 0;
+      border-bottom: 0.5px solid var(--rule-lt);
+    }
+
+    .award-item:last-child { border-bottom: none; }
+
+    .award-name {
+      font-family: var(--ff-sans);
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .award-detail {
+      font-family: var(--ff-sans);
+      font-size: 12px;
+      color: var(--ink-3);
+    }
+
+    .award-year {
+      font-family: var(--ff-sans);
+      font-size: 12px;
+      color: var(--ink-3);
+      text-align: right;
+    }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 0.5px solid var(--rule);
+      padding: 26px 0;
+    }
+
+    .footer-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 var(--pad-x);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .footer-copy {
+      font-family: var(--ff-sans);
+      font-size: 11.5px;
+      color: var(--ink-3);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-links a {
+      font-family: var(--ff-sans);
+      font-size: 11.5px;
+      color: var(--ink-3);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--ink); text-decoration: none; }
+
+    /* ── Responsive ── */
+    @media (max-width: 580px) {
+      .hero { grid-template-columns: 1fr; gap: 20px; }
+      .hero-photo { width: 80px; height: 80px; }
+      .entry { grid-template-columns: 1fr; }
+      .badges { flex-direction: row; flex-wrap: wrap; margin-top: 10px; align-items: flex-start; }
+      .nav-links { gap: 16px; }
+      .skills-grid { grid-template-columns: 1fr; gap: 6px; }
+      .skills-cat { margin-top: 14px; }
     }
   </style>
 </head>
 <body>
 
+<nav>
+  <span class="nav-name">Jinqiu (Turbo) Du</span>
+  <ul class="nav-links">
+    <li><a href="#research">Research</a></li>
+    <li><a href="#teaching">Teaching</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#awards">Awards</a></li>
+    <li><a href="Resume.pdf">CV</a></li>
+  </ul>
+</nav>
 
-<!-- Navigation -->
-	<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-	  <div class="container">
-		<div class="navbar-header">
-		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-		</div>
+<div class="page">
 
-		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		  <ul class="nav navbar-nav">
-				  <li><a href="index.html">HOME</a></li>
-				  <li><a href="#research">RESEARCH EXPERIENCE</a></li>
-				  <li><a href="#talks">TALKS</a></li>
-				  <li><a href="#teaching">TEACHING EXPERIENCE</a></li>
-				  <li><a href="#skills">SKILLS</a></li>
-				  <li><a href="#awards">AWARDS</a></li>
-				  <li><a href="Resume.pdf">RESUME</a></li> 
-		  </ul>
-		</div>
-	  </div>
-	</nav>
-  
-  <!-- Page Content -->
-    <div class="container">
+  <!-- Hero -->
+  <header class="hero">
+    <img class="hero-photo" src="photo.jpg" alt="Jinqiu (Turbo) Du">
+    <div>
+      <h1 class="hero-name">Jinqiu (Turbo) Du</h1>
+      <p class="hero-role">Ph.D. Student &nbsp;·&nbsp; Biomedical Data Science &nbsp;·&nbsp; University of Wisconsin–Madison</p>
+      <p class="hero-bio">
+        I'm an incoming Ph.D. student in Biomedical Data Science at the <strong>University of Wisconsin–Madison</strong>, starting Fall 2026. I hold a Master's degree in Biostatistics (Modeling and Methods Track) from the University of Washington and a Bachelor's degree (First Class Honors) in Statistics from Hong Kong Baptist University.
+      </p>
+      <p class="hero-bio">
+        My research focuses on statistical and deep learning methods for genomic and single-cell data — multimodal integration, representation learning, and the biology of Alzheimer's disease. I enjoy building methods that sit at the intersection of theory, computation, and biology.
+      </p>
+      <div class="hero-links">
+        <a href="mailto:turbodu@uw.edu">turbodu@uw.edu</a>
+        <a href="https://www.linkedin.com/in/turbodu/" target="_blank">LinkedIn</a>
+        <a href="https://github.com/turbodu222" target="_blank">GitHub</a>
+        <a href="Resume.pdf">Curriculum Vitae</a>
+      </div>
+    </div>
+  </header>
 
-        <div class="row">
+  <!-- Research Interests -->
+  <div class="interests-block">
+    <div class="interests-wrap">
+      <span class="interest-item">Single-cell Analysis</span><span class="interest-sep">·</span>
+      <span class="interest-item">Deep Learning</span><span class="interest-sep">·</span>
+      <span class="interest-item">Alzheimer's Disease</span><span class="interest-sep">·</span>
+      <span class="interest-item">Spatial Transcriptomics</span><span class="interest-sep">·</span>
+      <span class="interest-item">Statistical Modeling</span><span class="interest-sep">·</span>
+      <span class="interest-item">Genomics</span><span class="interest-sep">·</span>
+      <span class="interest-item">Multimodal Data Integration</span><span class="interest-sep">·</span>
+      <span class="interest-item">Computational Biology</span><span class="interest-sep">·</span>
+      <span class="interest-item">Machine Learning</span>
+    </div>
+  </div>
 
-            <!-- Entries Column -->
-            <div class="col-md-9">
-                <div class="content-card">
-                
-                <div style="margin-top:3%; text-align:justify;">
-			
-			        <p>I'm an incoming Ph.D. student in Biomedical Data Science at the <strong>University of Wisconsin–Madison</strong>, starting Fall 2026. I hold a Master's degree in Biostatistics (Modeling and Methods Track) from the University of Washington and a Bachelor's degree (First Class Honors) in Statistics from Hong Kong Baptist University.</p>
-					
-					<p>My research focuses on developing and applying statistical and deep learning models to genomic and single-cell data, aiming to uncover molecular mechanisms and cell-state heterogeneity through multimodal data integration. I am particularly interested in bridging modern statistical inference with representation learning to understand complex biological systems such as Alzheimer's disease.</p>
-					
-					<p>Previously, I have worked on projects involving cross-modal alignment of single-cell morphology and transcriptomics, spatial transcriptomics–guided pathology modeling, and causal modeling of pediatric kidney function.</p>
-					
-					<p>I am broadly interested in statistics, computational biology, and data science, and enjoy building methods that combine theory, computation, and biology.</p>
-			
-					<p>For more information about me, please check out my <a href="Resume.pdf">resume</a>, or reach out via email or <a href="https://www.linkedin.com/in/turbodu/">LinkedIn</a>.</p>
-					
-					<hr style="margin: 25px 0; border-top: 1px solid #e0e0e0;">
-					
-					<h3 style="color: #2c5282; font-family: 'Playfair Display', serif; font-weight: 700; margin-bottom: 15px;">Research Interests</h3>
-					<div style="margin-bottom: 20px;">
-						<span class="interest-tag">Single-cell Analysis</span>
-						<span class="interest-tag">Deep Learning</span>
-						<span class="interest-tag">Alzheimer's Disease</span>
-						<span class="interest-tag">Spatial Transcriptomics</span>
-						<span class="interest-tag">Statistical Modeling</span>
-						<span class="interest-tag">Genomics</span>
-						<span class="interest-tag">Multimodal Data Integration</span>
-						<span class="interest-tag">Computational Biology</span>
-						<span class="interest-tag">Machine Learning</span>
-					</div>
-                </div>
-                </div>
-            </div> 
+  <!-- Research Experience -->
+  <section id="research">
+    <div class="section-label">Research Experience</div>
 
-            <!-- Contact Info on the Sidebar -->
-            <div class="col-md-3">
-                <div class="sidebar-card">
-                <img class="profile-photo" src="photo.jpg" alt="Jinqiu (Turbo) Du">
-                <div class="name-title" style="font-size: 24px; text-align: center;"><b>Jinqiu (Turbo) Du</b></div><br>
-                <p><i class="fas fa-envelope contact-icon"></i><b><a href="mailto:turbodu@uw.edu">turbodu@uw.edu</a></b></p>
-                <p>Biostatistics Master's Student<br>University of Washington</p>
-                <hr style="margin: 15px 0;">
-                <p><i class="fab fa-linkedin contact-icon"></i><a href="https://www.linkedin.com/in/turbodu/">LinkedIn</a></p>
-                </div>
-            </div>
-            
-		
-		        <!-- Research Experience -->
-            <div class="col-md-9">
-                <div class="content-card" style="margin-top: 5px;">
-                <h2 id="research" style="margin-top: 5px;">Research Experience</h2>
-		
-		        <!-- GeoAdvAE -->
-		        <div class="research-entry">
-		          <div class="entry-title">
-		            Integrating Single-Cell Morphology and Gene Expression for Cross-Modal Analysis
-		            <span class="badge-tag">RECOMB 2026</span>
-		          </div>
-		          <div class="entry-meta">First author · Supervised by Prof. Kevin Z. Lin, University of Washington · Jan. 2025 – Present</div>
-		          <p>
-		            A fundamental challenge in single-cell biology is that two of the most information-rich data modalities — a cell's physical shape (morphology) and its gene expression profile — are rarely measured together on the same cells. Without paired observations, it is unclear whether morphology and transcriptomics reflect the same underlying cell states, or how to transfer information between them. To address this, we developed <strong>GeoAdvAE</strong>, a geometry-aware adversarial variational autoencoder built in PyTorch. The model jointly encodes both modalities into a shared latent space using a multi-objective loss that combines adversarial alignment with Gromov–Wasserstein optimal transport — a technique that aligns geometric structures across spaces without requiring point-to-point correspondences. On benchmark Patch-seq data (where neurons have both morphology and RNA-seq measured), GeoAdvAE achieved roughly 20% higher cell-type alignment accuracy than 11 competing methods. We further applied it to unpaired microglia data from a mouse model of Alzheimer's disease, uncovering morphology-associated gene programs tied to disease-relevant microglial states.
-		          </p>
-		          <div class="entry-links">
-		            <a href="https://github.com/turbodu222/GeoAdVAE" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-		            <a href="https://www.biorxiv.org/content/10.1101/2025.11.19.689368v2" target="_blank"><i class="fas fa-file-alt"></i> bioRxiv</a>
-		            <span style="color: #718096; font-size: 13px; font-family: 'DM Sans', sans-serif;">Accepted at Research in Computational Molecular Biology (RECOMB), 2026</span>
-		          </div>
-		        </div>
+    <div class="entry">
+      <div class="entry-main">
+        <div class="entry-title">Integrating Single-Cell Morphology and Gene Expression for Cross-Modal Analysis</div>
+        <div class="entry-meta">First author &nbsp;·&nbsp; Prof. Kevin Z. Lin, University of Washington &nbsp;·&nbsp; Jan. 2025 – Present</div>
+        <div class="entry-body">
+          A fundamental challenge in single-cell biology is that two of the most information-rich data modalities — a cell's physical shape (morphology) and its gene expression profile — are rarely measured together on the same cells. Without paired observations, it is unclear whether morphology and transcriptomics reflect the same underlying cell states, or how to transfer information between them. To address this, we developed <strong>GeoAdvAE</strong>, a geometry-aware adversarial variational autoencoder built in PyTorch. The model jointly encodes both modalities into a shared latent space using a multi-objective loss that combines adversarial alignment with Gromov–Wasserstein optimal transport — a technique that aligns geometric structures across spaces without requiring point-to-point correspondences. On benchmark Patch-seq data, GeoAdvAE achieved roughly 20% higher cell-type alignment accuracy than 11 competing methods. We further applied it to unpaired microglia data from a mouse model of Alzheimer's disease, uncovering morphology-associated gene programs tied to disease-relevant microglial states.
+        </div>
+        <div class="entry-links">
+          <a href="https://github.com/turbodu222/GeoAdVAE" target="_blank"><i class="fab fa-github" style="font-size:11px; margin-right:4px;"></i>GitHub</a>
+          <a href="https://www.biorxiv.org/content/10.1101/2025.11.19.689368v2" target="_blank">bioRxiv</a>
+          <span class="note">Accepted at Research in Computational Molecular Biology (RECOMB), 2026</span>
+        </div>
+      </div>
+      <div class="badges">
+        <span class="badge">RECOMB 2026</span>
+      </div>
+    </div>
 
-		        <!-- STPath -->
-		        <div class="research-entry">
-		          <div class="entry-title">STPath – Spatial Transcriptomics-Guided Deep Learning for Pathology Image Analysis</div>
-		          <div class="entry-meta">Research Assistant · Supervised by Prof. Wei Sun, Fred Hutchinson Cancer Center · Feb. 2025 – Present</div>
-		          <p>
-		            Histopathology slides — high-resolution tissue images reviewed by pathologists — contain rich spatial information about tumor microenvironments, but quantifying cell-type composition from images alone is a hard problem. Spatial transcriptomics, which measures gene expression at spatially resolved spots in a tissue section, offers a natural supervision signal. We developed an end-to-end pipeline that deconvolves cell-type proportions from spatial transcriptomics data (using a modified CARD R package with custom differentially expressed genes), then uses those proportions to supervise a downstream image model. Latent embeddings from multiple pathology vision foundation models (CONCH, ProvGigapath, Virchow, UNI2h) are extracted from the slide images, and an XGBoost model is trained to predict cell-type composition directly from image features — reaching a Pearson correlation of ~0.7 on held-out lung cancer samples. The result is a workflow that bridges molecular measurements and pathology imaging without requiring expensive paired data at prediction time.
-		          </p>
-		        </div>
+    <div class="entry">
+      <div class="entry-main">
+        <div class="entry-title">STPath — Spatial Transcriptomics-Guided Deep Learning for Pathology Image Analysis</div>
+        <div class="entry-meta">Research Assistant &nbsp;·&nbsp; Prof. Wei Sun, Fred Hutchinson Cancer Center &nbsp;·&nbsp; Feb. 2025 – Present</div>
+        <div class="entry-body">
+          Histopathology slides contain rich spatial information about tumor microenvironments, but quantifying cell-type composition from images alone is a hard problem. Spatial transcriptomics, which measures gene expression at spatially resolved spots in a tissue section, offers a natural supervision signal. We developed an end-to-end pipeline that deconvolves cell-type proportions from spatial transcriptomics data (using a modified CARD R package with custom differentially expressed genes), then uses those proportions to supervise a downstream image model. Latent embeddings from multiple pathology vision foundation models (CONCH, ProvGigapath, Virchow, UNI2h) are extracted from the slide images, and an XGBoost model is trained to predict cell-type composition directly from image features — reaching a Pearson correlation of ~0.7 on held-out lung cancer samples.
+        </div>
+      </div>
+      <div class="badges"></div>
+    </div>
 
-		        <!-- Was2CoDE / Microglia -->
-		        <div class="research-entry">
-		          <div class="entry-title">Cohort-Level Differential Distributional Analysis of Microglia in Alzheimer's Disease</div>
-		          <div class="entry-meta">Co-author · Supervised by Prof. Kevin Z. Lin & UW Neuroscience · Sep. 2024 – Jun. 2025</div>
-		          <p>
-		            Standard differential expression (DE) analysis compares mean gene expression levels between groups — but in complex diseases like Alzheimer's, the interesting biology often lives in the <em>shape</em> of the expression distribution rather than its average. Microglia, the brain's immune cells, are particularly heterogeneous: the same bulk-level average can mask very different subpopulation structures across cohorts. We developed <strong>Was2CoDE</strong>, a Python framework using nonparametric Wasserstein-based metrics to detect cohort-level distributional shifts in microglial gene expression from single-nuclei RNA-seq data. We benchmarked it against classical DE methods (edgeR, DESeq2, eSVD, and an scVI-based framework) through extensive downsampling experiments across multiple real datasets (Prater, SEA-AD, ROS-MAP), finding approximately 25% higher sensitivity for detecting subtype-specific microglial activation patterns that traditional methods miss.
-		          </p>
-		        </div>
+    <div class="entry">
+      <div class="entry-main">
+        <div class="entry-title">Cohort-Level Differential Distributional Analysis of Microglia in Alzheimer's Disease</div>
+        <div class="entry-meta">Co-author &nbsp;·&nbsp; Prof. Kevin Z. Lin & UW Neuroscience &nbsp;·&nbsp; Sep. 2024 – Jun. 2025</div>
+        <div class="entry-body">
+          Standard differential expression (DE) analysis compares mean gene expression levels between groups — but in complex diseases like Alzheimer's, the interesting biology often lives in the <em>shape</em> of the expression distribution rather than its average. Microglia, the brain's immune cells, are particularly heterogeneous: the same bulk-level average can mask very different subpopulation structures across cohorts. We developed <strong>Was2CoDE</strong>, a Python framework using nonparametric Wasserstein-based metrics to detect cohort-level distributional shifts in microglial gene expression from single-nuclei RNA-seq data. We benchmarked it against classical DE methods (edgeR, DESeq2, eSVD, and an scVI-based framework) across multiple real datasets (Prater, SEA-AD, ROS-MAP), finding approximately 25% higher sensitivity for detecting subtype-specific microglial activation patterns.
+        </div>
+      </div>
+      <div class="badges"></div>
+    </div>
 
-		        <!-- Kidney -->
-		        <div class="research-entry">
-		          <div class="entry-title">
-		            Survival Modeling of Abnormal Ambulatory Blood Pressure and Kidney Function in Pediatric Patients
-		            <span class="badge-tag">WMRC 2026</span>
-		            <span class="badge-tag">PAS 2026</span>
-		            <span class="badge-tag badge-award">🏆 Best Abstract Award</span>
-		          </div>
-		          <div class="entry-meta">Research Assistant · Collaborated with Prof. Sangeeta R. Hingorani, Seattle Children's Hospital · Jul. 2024 – Sep. 2024</div>
-		          <p>
-		            Pediatric patients with kidney abnormalities are followed longitudinally over years, but their clinic visits are irregular, data is often missing, and blood pressure measurements are recorded around the clock (ambulatory monitoring) — all of which break standard longitudinal modeling assumptions. I contributed to two related nephrology studies. The first examined how nocturnal hypertension predicts future daytime hypertension in otherwise healthy children; to handle irregular follow-up and informative censoring, I proposed an adaptive Cox modeling framework with time-dependent covariate updating. The second study tracked kidney function decline in children with a solitary functioning kidney, where I developed a REML-imputation hybrid mixed model to jointly address missing-at-random data and within-subject correlation, enabling robust estimation of nonlinear eGFR trajectories. Both studies were accepted for presentation at the Western Medical Research Conference (WMRC) 2026 and the Pediatric Academic Societies (PAS) Conference 2026, and the work received the <strong>Best Gastroenterology, Hepatology & Nephrology Abstract Award</strong> from the Western Society for Pediatric Research.
-		          </p>
-		        </div>
+    <div class="entry">
+      <div class="entry-main">
+        <div class="entry-title">Survival Modeling of Abnormal Ambulatory Blood Pressure and Kidney Function in Pediatric Patients</div>
+        <div class="entry-meta">Research Assistant &nbsp;·&nbsp; Prof. Sangeeta R. Hingorani, Seattle Children's Hospital &nbsp;·&nbsp; Jul. 2024 – Sep. 2024</div>
+        <div class="entry-body">
+          Pediatric patients with kidney abnormalities are followed longitudinally over years, but their clinic visits are irregular, data is often missing, and blood pressure measurements are recorded around the clock — all of which break standard longitudinal modeling assumptions. I contributed to two related nephrology studies. The first examined how nocturnal hypertension predicts future daytime hypertension in otherwise healthy children; I proposed an adaptive Cox modeling framework with time-dependent covariate updating to handle irregular follow-up and informative censoring. The second study tracked kidney function decline in children with a solitary functioning kidney, where I developed a REML-imputation hybrid mixed model for robust estimation of nonlinear eGFR trajectories. Both studies were accepted for presentation at WMRC 2026 and PAS 2026, and the work received the <strong>Best Gastroenterology, Hepatology & Nephrology Abstract Award</strong> from the Western Society for Pediatric Research.
+        </div>
+      </div>
+      <div class="badges">
+        <span class="badge">WMRC 2026</span>
+        <span class="badge">PAS 2026</span>
+        <span class="badge badge-award">Best Award</span>
+      </div>
+    </div>
 
-		        <!-- COVID -->
-		        <div class="research-entry">
-		          <div class="entry-title">Optimization of Healthcare Resource Allocation During the COVID-19 Pandemic</div>
-		          <div class="entry-meta">First author · Supervised by Prof. Jingjin Wu & Prof. Yuhui Deng · Jan. 2023 – Dec. 2024</div>
-		          <p>
-		            When vaccines and ventilators are both scarce and their demands are intertwined with epidemic dynamics, allocating them efficiently across heterogeneous populations is a challenging combinatorial optimization problem. We tackled this by building a joint optimization framework that couples an extended SVUIR epidemiological model (tracking Susceptible, Vaccinated, Undetected, Infected, and Recovered compartments) with a linearized mixed-integer program (MIP). Nonlinear constraints were linearized via Big-M methods to make the problem tractable at scale. Applied to real COVID-19 data across 17 age groups and 5 regions over a 400-day planning horizon, the framework achieved over 60% higher computational efficiency and up to 70% cost reduction relative to baseline heuristic strategies.
-		          </p>
-		        </div>
+    <div class="entry">
+      <div class="entry-main">
+        <div class="entry-title">Optimization of Healthcare Resource Allocation During the COVID-19 Pandemic</div>
+        <div class="entry-meta">First author &nbsp;·&nbsp; Prof. Jingjin Wu & Prof. Yuhui Deng &nbsp;·&nbsp; Jan. 2023 – Dec. 2024</div>
+        <div class="entry-body">
+          When vaccines and ventilators are both scarce and intertwined with epidemic dynamics, allocating them efficiently across heterogeneous populations is a challenging combinatorial optimization problem. We built a joint optimization framework coupling an extended SVUIR epidemiological model with a linearized mixed-integer program (MIP). Nonlinear constraints were linearized via Big-M methods to make the problem tractable at scale. Applied to real COVID-19 data across 17 age groups and 5 regions over a 400-day planning horizon, the framework achieved over 60% higher computational efficiency and up to 70% cost reduction relative to baseline heuristic strategies.
+        </div>
+      </div>
+      <div class="badges"></div>
+    </div>
 
-		        <!-- UAV -->
-		        <div class="research-entry">
-		          <div class="entry-title">Optimization of UAV Trajectory Planning and Task Allocation in Fog Computing</div>
-		          <div class="entry-meta">Project Director · Supervised by Prof. Jingjin Wu & Prof. Yuhui Deng · Jun. 2022 – Jan. 2024</div>
-		          <p>
-		            UAVs deployed for edge/fog computing must simultaneously fly stable paths, complete assigned computational tasks, and conserve battery — objectives that conflict under real-world weather and terrain variability. I led a project that tackled this as a holistic 3D optimization problem. We developed an adaptive control algorithm for flight stability and proposed an improved ant colony optimization method for joint trajectory planning and task assignment, validated against real meteorological and terrain data. The framework achieved a ≥34% gain in energy efficiency and a 2.6× increase in task completion rate over baselines. The project was independently funded by the Provincial Government's "Climbing Plan" research grant.
-		          </p>
-		        </div>
-		
-		        <h2 id="talks" style="margin-top: 30px;">Talks</h2>
-		        <ul>
-		          <li><strong>"Integrating Single-Cell Morphology and Gene Expression for Cross-Modal Analysis"</strong>, Poster Presentation, American Society of Human Genetics (ASHG) Annual Meeting, Boston, MA, 2025. [<a href="https://docs.google.com/presentation/d/1iy82r5AF1se86gy0glHxMBuV67iL7jcje6yCPcFgbRA/edit?usp=sharing">Poster</a>]</li>
-		        </ul>
-		
-		        <h2 id="teaching" style="margin-top: 50px;">Teaching Experience</h2>
+    <div class="entry">
+      <div class="entry-main">
+        <div class="entry-title">Optimization of UAV Trajectory Planning and Task Allocation in Fog Computing</div>
+        <div class="entry-meta">Project Director &nbsp;·&nbsp; Prof. Jingjin Wu & Prof. Yuhui Deng &nbsp;·&nbsp; Jun. 2022 – Jan. 2024</div>
+        <div class="entry-body">
+          UAVs deployed for edge/fog computing must simultaneously fly stable paths, complete assigned computational tasks, and conserve battery — objectives that conflict under real-world weather and terrain variability. We tackled this as a holistic 3D optimization problem, developing an adaptive control algorithm for flight stability and an improved ant colony optimization method for joint trajectory planning and task assignment, validated against real meteorological and terrain data. The framework achieved a ≥34% gain in energy efficiency and a 2.6× increase in task completion rate over baselines. The project was independently funded by the Provincial Government's "Climbing Plan" research grant.
+        </div>
+      </div>
+      <div class="badges"></div>
+    </div>
+  </section>
 
-		        <div class="teaching-entry">
-		          <div class="entry-title">Teaching Assistant – BIOST 546: Machine Learning for Biomedical and Public Health Big Data <span style="font-weight:400; font-size:13px; font-family:'DM Sans', sans-serif;">(Graduate)</span></div>
-		          <div class="entry-meta">Department of Biostatistics, University of Washington · Dec. 2025 – Present</div>
-		          <p>Graded homework assignments and answer keys, and supported students with Python and R programming questions during office hours.</p>
-		        </div>
+  <!-- Talks -->
+  <section id="talks">
+    <div class="section-label">Talks & Presentations</div>
+    <div class="talk-item">
+      <strong>"Integrating Single-Cell Morphology and Gene Expression for Cross-Modal Analysis"</strong><br>
+      Poster Presentation, American Society of Human Genetics (ASHG) Annual Meeting, Boston, MA, 2025.
+      &ensp;<a href="https://docs.google.com/presentation/d/1iy82r5AF1se86gy0glHxMBuV67iL7jcje6yCPcFgbRA/edit?usp=sharing" target="_blank">View poster →</a>
+    </div>
+  </section>
 
-		        <div class="teaching-entry">
-		          <div class="entry-title">Teaching Assistant – BIOST 310: Biostatistics for the Health Sciences <span style="font-weight:400; font-size:13px; font-family:'DM Sans', sans-serif;">(Undergraduate)</span></div>
-		          <div class="entry-meta">Department of Biostatistics, University of Washington · Sep. 2025 – Dec. 2025</div>
-		          <p>Led weekly 2-hour discussion sections, held office hours, and graded coursework for a class of approximately 200 students.</p>
-		        </div>
+  <!-- Teaching -->
+  <section id="teaching">
+    <div class="section-label">Teaching Experience</div>
 
-		        <div class="teaching-entry">
-		          <div class="entry-title">Tutor in Statistics – Statistics Study Center</div>
-		          <div class="entry-meta">Department of Statistics, University of Washington · Sep. 2024 – Present</div>
-		          <p>Provided weekly 4-hour tutoring sessions assisting approximately 30 undergraduate students with statistical coursework and R programming.</p>
-		        </div>
+    <div class="t-entry">
+      <div class="t-title">Teaching Assistant — BIOST 546: Machine Learning for Biomedical and Public Health Big Data <span>(Graduate)</span></div>
+      <div class="t-meta">Department of Biostatistics, University of Washington &nbsp;·&nbsp; Dec. 2025 – Present</div>
+      <div class="t-body">Graded homework assignments and answer keys, and supported students with Python and R programming questions during office hours.</div>
+    </div>
 
-		        <div class="teaching-entry">
-		          <div class="entry-title">Volunteer Contributor – BIOST 545: Biostatistical Methods for Big Omics Data <span style="font-weight:400; font-size:13px; font-family:'DM Sans', sans-serif;">(Graduate)</span></div>
-		          <div class="entry-meta">Department of Biostatistics, University of Washington · May 2025 – Aug. 2025</div>
-		          <p>Built the course website using R and the Quarto framework to present lecture materials and reproducible code examples.</p>
-		        </div>
-		
-		        <h2 id="skills" style="margin-top: 50px;">Skills</h2>
-		
-		        <div class="skills-category">
-			        <strong>Programming Languages</strong>
-			        <div>
-				        <span class="skill-tag">Python</span>
-				        <span class="skill-tag">R</span>
-				        <span class="skill-tag">MATLAB</span>
-				        <span class="skill-tag">C</span>
-				        <span class="skill-tag">Java</span>
-				        <span class="skill-tag">SQL</span>
-			        </div>
-		        </div>
-		
-		        <div class="skills-category">
-			        <strong>Tools & Software</strong>
-			        <div>
-				        <span class="skill-tag">PyTorch</span>
-				        <span class="skill-tag">TensorFlow</span>
-				        <span class="skill-tag">Git</span>
-				        <span class="skill-tag">Linux</span>
-				        <span class="skill-tag">LaTeX</span>
-				        <span class="skill-tag">SPSS</span>
-				        <span class="skill-tag">Lingo</span>
-				        <span class="skill-tag">Excel</span>
-			        </div>
-		        </div>
-		
-		        <div class="skills-category">
-			        <strong>Methods & Techniques</strong>
-			        <div>
-				        <span class="skill-tag">Deep Learning</span>
-				        <span class="skill-tag">Statistical Modeling</span>
-			        </div>
-		        </div>
-		
-		        <h2 id="awards" style="margin-top: 50px;">Awards</h2>
-		        <ul>
-		          <li><strong>Best Gastroenterology, Hepatology & Nephrology Abstract Award</strong>, Western Society for Pediatric Research, 2025</li>
-		          <li><strong>Finalist</strong>, COMAP Mathematical Contest in Modeling (MCM), Top 1% Worldwide, 2022</li>
-		          <li><strong>Meritorious Winner</strong>, COMAP Mathematical Contest in Modeling (MCM), Top 6% Worldwide, 2023</li>
-		          <li><strong>First-Class Academic Scholarship</strong>, Hong Kong Baptist University, Top 5%, 2021–2023</li>
-		          <li><strong>President's Honour Roll</strong>, Hong Kong Baptist University, 2020–2024</li>
-		          <li><strong>Student Internship Scholarship</strong>, Hong Kong Baptist University, 2021</li>
-		        </ul>
+    <div class="t-entry">
+      <div class="t-title">Teaching Assistant — BIOST 310: Biostatistics for the Health Sciences <span>(Undergraduate)</span></div>
+      <div class="t-meta">Department of Biostatistics, University of Washington &nbsp;·&nbsp; Sep. 2025 – Dec. 2025</div>
+      <div class="t-body">Led weekly 2-hour discussion sections, held office hours, and graded coursework for a class of approximately 200 students.</div>
+    </div>
+
+    <div class="t-entry">
+      <div class="t-title">Tutor in Statistics — Statistics Study Center</div>
+      <div class="t-meta">Department of Statistics, University of Washington &nbsp;·&nbsp; Sep. 2024 – Present</div>
+      <div class="t-body">Provided weekly 4-hour tutoring sessions assisting approximately 30 undergraduate students with statistical coursework and R programming.</div>
+    </div>
+
+    <div class="t-entry">
+      <div class="t-title">Volunteer Contributor — BIOST 545: Biostatistical Methods for Big Omics Data <span>(Graduate)</span></div>
+      <div class="t-meta">Department of Biostatistics, University of Washington &nbsp;·&nbsp; May 2025 – Aug. 2025</div>
+      <div class="t-body">Built the course website using R and the Quarto framework to present lecture materials and reproducible code examples.</div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <div class="section-label">Skills</div>
+    <div class="skills-grid">
+      <span class="skills-cat">Languages</span>
+      <span class="skills-list">Python, R, MATLAB, C, Java, SQL</span>
+
+      <span class="skills-cat">Tools</span>
+      <span class="skills-list">PyTorch, TensorFlow, Git, Linux, LaTeX, SPSS, Lingo, Excel, Affinity Designer</span>
+
+      <span class="skills-cat">Methods</span>
+      <span class="skills-list">Deep Learning, Statistical Modeling, Survival Analysis, Mixed Models, Optimal Transport</span>
+    </div>
+  </section>
+
+  <!-- Awards -->
+  <section id="awards">
+    <div class="section-label">Honors & Awards</div>
+
+    <div class="award-item">
+      <div>
+        <div class="award-name">Best Gastroenterology, Hepatology & Nephrology Abstract Award</div>
+        <div class="award-detail">Western Society for Pediatric Research</div>
+      </div>
+      <div class="award-year">2025</div>
+    </div>
+
+    <div class="award-item">
+      <div>
+        <div class="award-name">Finalist, COMAP Mathematical Contest in Modeling (MCM)</div>
+        <div class="award-detail">Top 1% worldwide</div>
+      </div>
+      <div class="award-year">2022</div>
+    </div>
+
+    <div class="award-item">
+      <div>
+        <div class="award-name">Meritorious Winner, COMAP Mathematical Contest in Modeling (MCM)</div>
+        <div class="award-detail">Top 6% worldwide</div>
+      </div>
+      <div class="award-year">2023</div>
+    </div>
+
+    <div class="award-item">
+      <div>
+        <div class="award-name">First-Class Academic Scholarship</div>
+        <div class="award-detail">Hong Kong Baptist University · Top 5%</div>
+      </div>
+      <div class="award-year">2021–23</div>
+    </div>
+
+    <div class="award-item">
+      <div>
+        <div class="award-name">President's Honour Roll</div>
+        <div class="award-detail">Hong Kong Baptist University</div>
+      </div>
+      <div class="award-year">2020–24</div>
+    </div>
+
+    <div class="award-item">
+      <div>
+        <div class="award-name">Student Internship Scholarship</div>
+        <div class="award-detail">Hong Kong Baptist University</div>
+      </div>
+      <div class="award-year">2021</div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">Jinqiu (Turbo) Du &nbsp;·&nbsp; turbodu@uw.edu</span>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/turbodu/" target="_blank">LinkedIn</a>
+      <a href="https://github.com/turbodu222" target="_blank">GitHub</a>
+      <a href="Resume.pdf">CV</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
