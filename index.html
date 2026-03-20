@@ -15,15 +15,14 @@ We are borrowing this template for use with the capstone program
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <style>
     /* Custom color scheme - Academic deep blue */
     body {
       background-color: #f5f7fa;
-      font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+      font-family: 'Source Serif 4', Georgia, serif;
     }
     
     /* Navbar styling */
@@ -35,8 +34,9 @@ We are borrowing this template for use with the capstone program
     .navbar-inverse .navbar-nav > li > a {
       color: #e6f0ff;
       transition: all 0.3s ease;
-      font-family: 'Open Sans', sans-serif;
-      font-weight: 600;
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+      letter-spacing: 0.04em;
     }
     
     .navbar-inverse .navbar-nav > li > a:hover,
@@ -69,7 +69,7 @@ We are borrowing this template for use with the capstone program
       border-bottom: 2px solid #e6f0ff;
       padding-bottom: 10px;
       margin-bottom: 20px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Playfair Display', serif;
       font-weight: 700;
     }
     
@@ -101,7 +101,7 @@ We are borrowing this template for use with the capstone program
       color: #2c5282;
       display: block;
       margin-bottom: 5px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Playfair Display', serif;
       font-weight: 600;
     }
     
@@ -113,29 +113,32 @@ We are borrowing this template for use with the capstone program
       border-radius: 15px;
       margin: 3px;
       font-size: 14px;
-      font-family: 'Open Sans', sans-serif;
+      font-family: 'Source Serif 4', serif;
     }
     
-    /* Research Interests tags */
+    /* Research Interests tags — monochrome scheme */
     .interest-tag {
       display: inline-block;
-      padding: 8px 16px;
-      border-radius: 20px;
-      margin: 5px;
-      font-size: 14px;
-      font-family: 'Open Sans', sans-serif;
-      font-weight: 500;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      background-color: #f0f2f5;
+      color: #2d3748;
+      border: 0.5px solid #cbd5e0;
+      padding: 5px 14px;
+      border-radius: 4px;
+      margin: 4px 3px;
+      font-size: 13.5px;
+      font-family: 'Source Serif 4', serif;
+      font-weight: 400;
+      transition: background-color 0.2s ease, border-color 0.2s ease;
     }
     
     .interest-tag:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      background-color: #e2e8f0;
+      border-color: #a0aec0;
     }
     
     /* Name title */
     .name-title {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Playfair Display', serif;
     }
     
     /* Profile photo styling */
@@ -161,7 +164,7 @@ We are borrowing this template for use with the capstone program
     }
 
     .research-entry .entry-title {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Playfair Display', serif;
       font-weight: 600;
       color: #1a202c;
       font-size: 15.5px;
@@ -172,6 +175,7 @@ We are borrowing this template for use with the capstone program
       color: #718096;
       font-size: 13.5px;
       font-style: italic;
+      font-family: 'Source Serif 4', serif;
       margin-bottom: 10px;
     }
 
@@ -195,6 +199,7 @@ We are borrowing this template for use with the capstone program
       padding: 2px 9px;
       border-radius: 10px;
       font-size: 12px;
+      font-family: 'Source Serif 4', serif;
       font-weight: 600;
       margin-left: 6px;
       vertical-align: middle;
@@ -212,7 +217,7 @@ We are borrowing this template for use with the capstone program
     }
 
     .teaching-entry .entry-title {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Playfair Display', serif;
       font-weight: 600;
       color: #1a202c;
       font-size: 15px;
@@ -223,6 +228,7 @@ We are borrowing this template for use with the capstone program
       color: #718096;
       font-size: 13.5px;
       font-style: italic;
+      font-family: 'Source Serif 4', serif;
       margin-bottom: 6px;
     }
   </style>
@@ -280,17 +286,17 @@ We are borrowing this template for use with the capstone program
 					
 					<hr style="margin: 25px 0; border-top: 1px solid #e0e0e0;">
 					
-					<h3 style="color: #2c5282; font-family: 'Montserrat', sans-serif; font-weight: 600; margin-bottom: 15px;">Research Interests</h3>
+					<h3 style="color: #2c5282; font-family: 'Playfair Display', serif; font-weight: 700; margin-bottom: 15px;">Research Interests</h3>
 					<div style="margin-bottom: 20px;">
-						<span class="interest-tag" style="background-color: #e3f2fd; color: #1565c0;">Single-cell Analysis</span>
-						<span class="interest-tag" style="background-color: #f3e5f5; color: #6a1b9a;">Deep Learning</span>
-						<span class="interest-tag" style="background-color: #e8f5e9; color: #2e7d32;">Alzheimer's Disease</span>
-						<span class="interest-tag" style="background-color: #fff3e0; color: #e65100;">Spatial Transcriptomics</span>
-						<span class="interest-tag" style="background-color: #fce4ec; color: #c2185b;">Statistical Modeling</span>
-						<span class="interest-tag" style="background-color: #e0f2f1; color: #00695c;">Genomics</span>
-						<span class="interest-tag" style="background-color: #f1f8e9; color: #558b2f;">Multimodal Data Integration</span>
-						<span class="interest-tag" style="background-color: #ede7f6; color: #4527a0;">Computational Biology</span>
-						<span class="interest-tag" style="background-color: #fff9c4; color: #f57f17;">Machine Learning</span>
+						<span class="interest-tag">Single-cell Analysis</span>
+						<span class="interest-tag">Deep Learning</span>
+						<span class="interest-tag">Alzheimer's Disease</span>
+						<span class="interest-tag">Spatial Transcriptomics</span>
+						<span class="interest-tag">Statistical Modeling</span>
+						<span class="interest-tag">Genomics</span>
+						<span class="interest-tag">Multimodal Data Integration</span>
+						<span class="interest-tag">Computational Biology</span>
+						<span class="interest-tag">Machine Learning</span>
 					</div>
                 </div>
                 </div>
@@ -301,7 +307,7 @@ We are borrowing this template for use with the capstone program
                 <div class="sidebar-card">
                 <img class="profile-photo" src="photo.jpg" alt="Jinqiu (Turbo) Du">
                 <div class="name-title" style="font-size: 24px; text-align: center;"><b>Jinqiu (Turbo) Du</b></div><br>
-                <p><i class="fas fa-envelope contact-icon"></i><b><a href="mailto:turbodu@uw.edu">turbodu@uw.edu</a></b><br>
+                <p><i class="fas fa-envelope contact-icon"></i><b><a href="/cdn-cgi/l/email-protection#99edecebfbf6fdecd9eceeb7fcfdec"><span class="__cf_email__" data-cfemail="f88c8d8a9a979c8db88d8fd69d9c8d">[email&#160;protected]</span></a></b><br>
                 <p>Biostatistics Master's Student<br>
 		        <p>University of Washington<br>
                 </p>
@@ -391,7 +397,7 @@ We are borrowing this template for use with the capstone program
 		        <h2 id="teaching" style="margin-top: 50px;">Teaching Experience</h2>
 
 		        <div class="teaching-entry">
-		          <div class="entry-title">Teaching Assistant – BIOST 546: Machine Learning for Biomedical and Public Health Big Data <span style="font-weight:400; font-size:13.5px;">(Graduate)</span></div>
+		          <div class="entry-title">Teaching Assistant – BIOST 546: Machine Learning for Biomedical and Public Health Big Data <span style="font-weight:400; font-size:13.5px; font-family:'Source Serif 4', serif;">(Graduate)</span></div>
 		          <div class="entry-meta">Department of Biostatistics, University of Washington · Dec. 2025 – Present</div>
 		          <p>Graded homework assignments and answer keys, and supported students with Python and R programming questions during office hours.</p>
 		        </div>
@@ -459,16 +465,3 @@ We are borrowing this template for use with the capstone program
 		          <li><strong>President's Honour Roll</strong>, Hong Kong Baptist University, 2020–2024</li>
 		          <li><strong>Student Internship Scholarship</strong>, Hong Kong Baptist University, 2021</li>
 		        </ul>
-                </div>
-            </div>
-
-            
-        </div>
-
-
-    </div>
-    <!-- /.container -->
-    
-</body>
-
-</html>
